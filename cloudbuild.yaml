@@ -5,11 +5,9 @@ options:
 steps:
 # Build the combined Docker image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/terraform-429505/myapp:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/terraform-429505/mynewapp:$COMMIT_SHA', '.']
 
 # Push the image to the Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/terraform-429505/myapp:$COMMIT_SHA']
+  args: ['push', 'gcr.io/terraform-429505/mynewapp:$COMMIT_SHA']
 
-images:
-  - 'gcr.io/terraform-429505/myapp:latest'
