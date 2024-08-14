@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  php:
+    build:
+      context: ./backend
+    image: gcr.io/terraform-429505/my-combined-app-php:latest
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www/html
+
+  frontend:
+    build:
+      context: ./frontend
+    
+    ports:
+      - "5000:5000"
